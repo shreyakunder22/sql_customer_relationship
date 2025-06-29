@@ -1,25 +1,7 @@
-Customer Relationship and Invoice Analysis
-
-Objective:
-The goal of this project is to create a structured database for managing and analyzing customer invoices. The analysis focuses on cleaning the data, exploring key metrics, and answering business questions to derive insights such as total revenue, customer behavior, and country-wise performance.
-
-Project Goal:
-* Design and create a relational database to store and manage customer invoice data.
-* Perform data cleaning to ensure accuracy and consistency by removing null or invalid records.
-* Explore the dataset to understand the volume and structure of the invoices.
-* Analyze key business metrics such as:
-    * Total revenue
-    * Top-performing countries and customers
-    * Monthly sales trends
-    * Returned items
-    * Invoice distribution by country
-* Identify patterns in customer purchases to support marketing and sales strategies.
 CREATE DATABASE CustomerRelationship;
 
-Technologies Used:
-* SQL (PostgreSQL / MySQL compatible)
-
 -- Create table 
+
 CREATE TABLE invoices (
     invoiceID VARCHAR(10),
     invoice_date DATE,
@@ -50,6 +32,7 @@ WHERE invoiceID IS NULL OR invoiceID = ''
    OR amount IS NULL;
 
 -- Data exploring 
+
 SELECT * FROM invoices;
 
 SELECT COUNT(*) AS total_invoices FROM invoices;
@@ -114,13 +97,4 @@ FROM invoices
 GROUP BY country
 ORDER BY invoice_count DESC;
 
-Conclusion:
-This SQL project demonstrates how to build a clean and functional invoice database, extract meaningful business insights, and perform various analysis tasks that support business decision-making. It covers essentials such as data cleaning, aggregation, and trend analysis using SQL.
-
-Future Enhancements:
-* Integrate customer demographic tables for deeper insights.
-* Automate data import from external sources (CSV/API).
-* Add indexes for performance optimization.
-* Use views or stored procedures for reusable analytics.
-
-
+-- end of project 
